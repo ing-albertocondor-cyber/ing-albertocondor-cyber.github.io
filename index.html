@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jesús Condor Mango | Especialista EVAR · Hidrología · Fotogrametría</title>
+<meta name="description" content="Jesús Condor Mango, Especialista EVAR acreditado por CENEPRED. Estudios de riesgos, hidrología y fotogrametría para proyectos de inversión pública en Perú.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F0EDE2;
+    --paper-2:#E7E2D2;
+    --ink:#1B2430;
+    --ink-soft:#3E4A57;
+    --amber:#8b2e74;
+    --survey-blue:#1F5C73;
+    --risk-red:#A63D2F;
+    --grid:#D8D3C0;
+    --white:#FFFFFF;
+    --radius:2px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    line-height:1.1;
+    color:var(--ink);
+  }
+  .mono{
+    font-family:'IBM Plex Mono',monospace;
+    letter-spacing:0.03em;
+  }
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px;}
+
+  /* ---------- Cajetín (title-block tag) ---------- */
+  .plate{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    border:1px solid var(--grid);
+    background:var(--white);
+    padding:4px 10px;
+  }
+  .plate b{color:var(--survey-blue);font-weight:600;}
+
+  /* ---------- Nav ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:rgba(240,237,226,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--grid);
+  }
+  .nav-inner{
+    max-width:1120px;margin:0 auto;padding:14px 28px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .brand{
+    font-family:'Fraunces',serif;font-weight:700;font-size:18px;
+    display:flex;flex-direction:column;line-height:1.15;
+  }
+  .brand span{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--survey-blue);font-weight:500;letter-spacing:0.1em;}
+  nav.links{display:flex;gap:2px;align-items:center;}
+  nav.links a{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11.5px;letter-spacing:0.04em;text-transform:uppercase;
+    padding:8px 12px;color:var(--ink-soft);border-radius:var(--radius);
+    transition:background .15s, color .15s;
+    display:flex;gap:6px;align-items:center;
+  }
+  nav.links a b{color:var(--amber);font-weight:600;}
+  nav.links a:hover{background:var(--paper-2);color:var(--ink);}
+  .menu-btn{display:none;background:none;border:1px solid var(--grid);padding:8px 10px;cursor:pointer;}
+  .menu-btn span, .menu-btn::before, .menu-btn::after{content:'';display:block;width:18px;height:2px;background:var(--ink);margin:4px 0;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    min-height:100svh;
+    display:flex;align-items:center;
+    padding-top:90px;
+    overflow:hidden;
+    border-bottom:1px solid var(--grid);
+  }
+  .contour-bg{position:absolute;inset:0;width:100%;height:100%;opacity:0.55;}
+  .contour-bg path{
+    fill:none;stroke:var(--amber);stroke-width:1;
+    stroke-dasharray:2600;stroke-dashoffset:2600;
+    animation:draw 3.2s ease-out forwards;
+  }
+  .contour-bg path:nth-child(2){stroke:var(--survey-blue);animation-delay:.15s;}
+  .contour-bg path:nth-child(3){stroke:var(--ink-soft);opacity:.5;animation-delay:.3s;}
+  .contour-bg path:nth-child(4){stroke:var(--amber);opacity:.7;animation-delay:.45s;}
+  .contour-bg path:nth-child(5){stroke:var(--survey-blue);opacity:.5;animation-delay:.6s;}
+  @keyframes draw{to{stroke-dashoffset:0;}}
+  @media (prefers-reduced-motion: reduce){
+    .contour-bg path{animation:none;stroke-dashoffset:0;}
+  }
+
+  .hero-content{position:relative;z-index:2;max-width:760px;}
+  .eyebrow{margin-bottom:18px;}
+  .hero h1{font-size:clamp(38px,6vw,64px);margin-bottom:6px;}
+  .hero .role{
+    font-size:clamp(16px,2.2vw,20px);color:var(--survey-blue);font-weight:600;margin-bottom:22px;
+    font-family:'Fraunces',serif;
+  }
+  .hero p.lead{max-width:560px;color:var(--ink-soft);font-size:17px;margin-bottom:30px;}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:44px;}
+  .btn{
+    font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:0.05em;text-transform:uppercase;
+    padding:13px 22px;border:1px solid var(--ink);transition:all .15s;
+  }
+  .btn-primary{background:var(--ink);color:var(--paper);}
+  .btn-primary:hover{background:var(--survey-blue);border-color:var(--survey-blue);}
+  .btn-ghost{background:transparent;color:var(--ink);}
+  .btn-ghost:hover{background:var(--white);}
+
+  .hero-strip{
+    display:flex;flex-wrap:wrap;border-top:1px solid var(--grid);border-bottom:1px solid var(--grid);
+  }
+  .hero-strip div{
+    flex:1;min-width:150px;padding:14px 0;border-right:1px solid var(--grid);
+  }
+  .hero-strip div:last-child{border-right:none;}
+  .hero-strip .label{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;}
+  .hero-strip .val{font-family:'Fraunces',serif;font-weight:600;font-size:20px;}
+
+  /* ---------- Section shell ---------- */
+  section{padding:110px 0;position:relative;}
+  section + section{border-top:1px solid var(--grid);}
+  .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:54px;flex-wrap:wrap;}
+  .section-head h2{font-size:clamp(28px,4vw,40px);}
+  .kicker{color:var(--amber);font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;display:block;}
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  /* ---------- Sobre mí ---------- */
+  .about-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:64px;align-items:start;}
+  .about-grid p{color:var(--ink-soft);margin-bottom:16px;font-size:16px;}
+  .timeline{border-left:2px solid var(--grid);padding-left:22px;display:flex;flex-direction:column;gap:22px;}
+  .timeline .item .t{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--survey-blue);text-transform:uppercase;letter-spacing:.06em;}
+  .timeline .item h4{font-family:'Fraunces',serif;font-size:17px;margin:4px 0 2px;}
+  .timeline .item p{color:var(--ink-soft);font-size:14px;}
+
+  /* ---------- Servicios ---------- */
+  .services{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--grid);border:1px solid var(--grid);}
+  .service-card{background:var(--paper);padding:36px;position:relative;}
+  .service-card.disabled{opacity:.55;}
+  .service-num{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-soft);}
+  .service-card h3{font-size:22px;margin:14px 0 12px;}
+  .service-card p{color:var(--ink-soft);font-size:14.5px;margin-bottom:16px;}
+  .tag-row{display:flex;flex-wrap:wrap;gap:6px;}
+  .tag{font-family:'IBM Plex Mono',monospace;font-size:10.5px;background:var(--paper-2);border:1px solid var(--grid);padding:3px 8px;color:var(--ink-soft);}
+  .soon{position:absolute;top:36px;right:36px;background:var(--risk-red);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:10px;padding:3px 8px;letter-spacing:.06em;}
+
+  /* ---------- Portafolio ---------- */
+  .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .pf-card{border:1px solid var(--grid);background:var(--white);}
+  .pf-thumb{aspect-ratio:4/3;background:var(--ink);position:relative;overflow:hidden;}
+  .pf-thumb svg{width:100%;height:100%;}
+  .pf-body{padding:18px;}
+  .pf-body .plate{margin-bottom:10px;}
+  .pf-body h4{font-family:'Fraunces',serif;font-size:17px;margin-bottom:6px;}
+  .pf-body p{color:var(--ink-soft);font-size:13.5px;}
+  .pf-note{
+    margin-top:40px;border:1px dashed var(--grid);padding:20px 24px;
+    font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--ink-soft);
+  }
+
+  /* ---------- Herramientas ---------- */
+  .tools-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--grid);border:1px solid var(--grid);}
+  .tool-card{background:var(--paper);padding:24px 16px;text-align:center;}
+  .tool-card .ic{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--survey-blue);margin-bottom:10px;}
+  .tool-card h5{font-family:'Fraunces',serif;font-size:15px;margin-bottom:4px;}
+  .tool-card p{font-size:12px;color:var(--ink-soft);}
+
+  /* ---------- Contacto ---------- */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+  .contact-list{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--grid);}
+  .contact-list a, .contact-list .row{
+    display:flex;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--grid);
+    font-family:'IBM Plex Mono',monospace;font-size:13px;
+  }
+  .contact-list .row span:first-child{color:var(--ink-soft);text-transform:uppercase;letter-spacing:.05em;font-size:11px;}
+  .social-row{display:flex;gap:10px;margin-top:24px;}
+  .social-row a{
+    width:42px;height:42px;border:1px solid var(--ink);display:flex;align-items:center;justify-content:center;
+    font-family:'IBM Plex Mono',monospace;font-size:11px;transition:all .15s;
+  }
+  .social-row a:hover{background:var(--ink);color:var(--paper);}
+  form{display:flex;flex-direction:column;gap:16px;}
+  form label{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);margin-bottom:6px;display:block;}
+  form input, form textarea{
+    width:100%;background:var(--white);border:1px solid var(--grid);padding:12px 14px;
+    font-family:'Inter',sans-serif;font-size:14px;color:var(--ink);
+  }
+  form input:focus, form textarea:focus{outline:2px solid var(--survey-blue);outline-offset:1px;}
+  form textarea{resize:vertical;min-height:110px;}
+
+  footer{padding:36px 0;border-top:1px solid var(--grid);}
+  .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+  .footer-inner p{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--ink-soft);}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:860px){
+    nav.links{display:none;}
+    .menu-btn{display:block;}
+    .about-grid, .contact-grid{grid-template-columns:1fr;gap:40px;}
+    .services{grid-template-columns:1fr;}
+    .portfolio-grid{grid-template-columns:1fr 1fr;}
+    .tools-grid{grid-template-columns:repeat(2,1fr);}
+    .hero-strip div{min-width:50%;}
+  }
+  @media (max-width:520px){
+    .portfolio-grid{grid-template-columns:1fr;}
+    .tools-grid{grid-template-columns:1fr 1fr;}
+    section{padding:70px 0;}
+  }
+
+  /* mobile nav panel */
+  #mobileNav{
+    display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:var(--paper);z-index:99;
+    padding:30px 28px;flex-direction:column;gap:4px;overflow-y:auto;
+  }
+  #mobileNav.open{display:flex;}
+  #mobileNav a{font-family:'IBM Plex Mono',monospace;font-size:15px;padding:16px 0;border-bottom:1px solid var(--grid);text-transform:uppercase;letter-spacing:.05em;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a href="#inicio" class="brand">JESÚS CONDOR MANGO<span>ESPECIALISTA EVAR · CENEPRED</span></a>
+    <nav class="links">
+      <a href="#inicio"><b>L-01</b> Inicio</a>
+      <a href="#sobre-mi"><b>L-02</b> Perfil</a>
+      <a href="#servicios"><b>L-03</b> Servicios</a>
+      <a href="#portafolio"><b>L-04</b> Proyectos</a>
+      <a href="#herramientas"><b>L-05</b> Software</a>
+      <a href="#contacto"><b>L-06</b> Contacto</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú"></button>
+  </div>
+</header>
+
+<div id="mobileNav">
+  <a href="#inicio">L-01 · Inicio</a>
+  <a href="#sobre-mi">L-02 · Perfil</a>
+  <a href="#servicios">L-03 · Servicios</a>
+  <a href="#portafolio">L-04 · Proyectos</a>
+  <a href="#herramientas">L-05 · Software</a>
+  <a href="#contacto">L-06 · Contacto</a>
+</div>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="inicio">
+  <svg class="contour-bg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+    <path d="M-50,650 C150,600 300,700 500,640 C700,580 850,660 1050,600 C1150,570 1250,610 1300,590"/>
+    <path d="M-50,550 C180,500 350,590 550,530 C750,470 900,560 1100,500 C1200,470 1280,510 1350,490"/>
+    <path d="M-50,730 C160,690 330,760 520,710 C710,660 880,730 1080,680 C1180,655 1260,690 1330,675"/>
+    <path d="M-50,450 C200,400 380,480 580,420 C780,360 930,450 1120,390 C1210,362 1290,400 1360,380"/>
+    <path d="M-50,340 C220,300 400,370 600,320 C800,270 950,340 1140,290 C1220,268 1300,300 1370,282"/>
+  </svg>
+  <div class="wrap hero-content">
+    <span class="eyebrow plate">DOC <b>EVAR-CIV-01</b> · REV. 2026 · CENEPRED ACREDITADO</span>
+    <h1>Jesús Condor Mango</h1>
+    <p class="role">Especialista en Evaluación de Riesgos por Fenómenos Naturales (EVAR)</p>
+    <p class="lead">Ingeniero Forestal y Ambiental (UNCP) con Maestría en Gestión Ambiental y Desarrollo Sostenible. Más de 5 años elaborando estudios EVAR para proyectos de inversión pública, respaldados con hidrología aplicada y levantamientos por fotogrametría de alta precisión.</p>
+    <div class="hero-actions">
+      <a href="#servicios" class="btn btn-primary">Ver servicios</a>
+      <a href="#contacto" class="btn btn-ghost">Solicitar cotización</a>
+    </div>
+  </div>
+</section>
+<div class="wrap">
+  <div class="hero-strip">
+    <div><div class="label mono">Experiencia EVAR</div><div class="val">+5 años</div></div>
+    <div><div class="label mono">Acreditación</div><div class="val">CENEPRED</div></div>
+    <div><div class="label mono">Formación</div><div class="val">Ing. Ambiental · Ing. Civil (en curso)</div></div>
+    <div><div class="label mono">Cobertura</div><div class="val">Perú</div></div>
+  </div>
+</div>
+
+<!-- ================= SOBRE MÍ ================= -->
+<section id="sobre-mi">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="kicker">Lámina 02 · Perfil profesional</span>
+        <h2>Formación técnica aplicada a la gestión del riesgo</h2>
+      </div>
+      <span class="plate">ESCALA <b>1:1</b> · SIN ESCALA GRÁFICA</span>
+    </div>
+    <div class="about-grid">
+      <div class="reveal">
+        <p>Soy Ingeniero Forestal y Ambiental egresado de la Universidad Nacional del Centro del Perú (UNCP), con Maestría en Gestión Ambiental y Desarrollo Sostenible en la misma casa de estudios. Actualmente curso la segunda mitad de la carrera de Ingeniería Civil, una decisión que nació directamente de mi experiencia como especialista EVAR: entender a fondo el comportamiento de la infraestructura frente a los fenómenos naturales que evalúo.</p>
+        <p>He desarrollado mi carrera tanto en el sector público —en áreas de Defensa Civil, Gestión del Riesgo de Desastres y Seguridad y Salud en el Trabajo— como en el sector privado, donde me desempeño actualmente como Especialista EVAR acreditado por CENEPRED para la formulación de estudios en proyectos de inversión pública.</p>
+        <p>Complemento cada estudio EVAR con análisis hidrológico especializado y, cuando el proyecto lo permite, con levantamientos topográficos por fotogrametría, lo que se traduce en informes y planos con mayor nivel de precisión.</p>
+      </div>
+      <div class="timeline reveal">
+        <div class="item">
+          <div class="t">Formación</div>
+          <h4>Ingeniería Forestal y Ambiental — UNCP</h4>
+          <p>Base técnica en gestión de recursos naturales y territorio.</p>
+        </div>
+        <div class="item">
+          <div class="t">Posgrado</div>
+          <h4>Maestría en Gestión Ambiental y Desarrollo Sostenible — UNCP</h4>
+          <p>Especialización en sostenibilidad y planificación ambiental.</p>
+        </div>
+        <div class="item">
+          <div class="t">Acreditación</div>
+          <h4>Especialista EVAR — CENEPRED</h4>
+          <p>Evaluador de riesgos por fenómenos naturales para PIP.</p>
+        </div>
+        <div class="item">
+          <div class="t">En curso</div>
+          <h4>Ingeniería Civil — 2do ciclo profesional</h4>
+          <p>Profundización estructural e hidráulica aplicada al riesgo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICIOS ================= -->
+<section id="servicios">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="kicker">Lámina 03 · Servicios</span>
+        <h2>Qué puedo desarrollar para tu proyecto</h2>
+      </div>
+      <span class="plate">DIBUJÓ <b>JCM</b> · REVISÓ <b>JCM</b></span>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="services reveal">
+      <div class="service-card">
+        <div class="service-num mono">SERV. 01</div>
+        <h3>Evaluación de Riesgos (EVAR)</h3>
+        <p>Estudios de evaluación de riesgos por fenómenos naturales para proyectos de inversión pública, conforme a la normativa CENEPRED, con más de 5 años de experiencia acreditada en el rubro.</p>
+        <div class="tag-row">
+          <span class="tag">CENEPRED</span><span class="tag">PIP / IOARR</span><span class="tag">ArcGIS 10.8</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-num mono">SERV. 02</div>
+        <h3>Estudios Hidrológicos</h3>
+        <p>Modelamiento hidrológico e hidráulico como sustento técnico de los estudios de riesgo: caudales, cuencas y comportamiento de flujo ante eventos extremos.</p>
+        <div class="tag-row">
+          <span class="tag">HEC-RAS 6.6</span><span class="tag">HidroEsta 2</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-num mono">SERV. 03</div>
+        <h3>Topografía por Fotogrametría</h3>
+        <p>Levantamientos topográficos con vuelos de dron procesados en Agisoft Metashape, para informes y planos con mayor precisión que un levantamiento convencional.</p>
+        <div class="tag-row">
+          <span class="tag">Agisoft Metashape</span><span class="tag">Civil 3D 2026</span><span class="tag">Ortomosaicos</span>
+        </div>
+      </div>
+      <div class="service-card disabled">
+        <span class="soon mono">Próximamente</span>
+        <div class="service-num mono">SERV. 04</div>
+        <h3>Ingeniería Civil</h3>
+        <p>Servicios de diseño e ingeniería civil, en ampliación conforme avanza mi formación en la carrera. Disponible próximamente.</p>
+        <div class="tag-row">
+          <span class="tag">En desarrollo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PORTAFOLIO ================= -->
+<section id="portafolio">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="kicker">Lámina 04 · Proyectos</span>
+        <h2>Casos de estudio</h2>
+      </div>
+      <span class="plate">ESTADO <b>EN CARGA</b></span>
+    </div>
+    <div class="portfolio-grid reveal">
+      <div class="pf-card">
+        <div class="pf-thumb">
+          <svg viewBox="0 0 300 225" xmlns="http://www.w3.org/2000/svg">
+            <rect width="300" height="225" fill="#1B2430"/>
+            <path d="M-10,180 C60,150 120,190 180,160 C240,130 270,170 320,150" stroke="#B78628" stroke-width="1.5" fill="none"/>
+            <path d="M-10,140 C70,110 130,150 190,120 C250,90 280,130 320,110" stroke="#1F5C73" stroke-width="1.5" fill="none"/>
+            <path d="M-10,100 C80,70 140,110 200,80 C260,50 285,90 320,70" stroke="#B78628" stroke-width="1.5" opacity="0.7" fill="none"/>
+          </svg>
+        </div>
+        <div class="pf-body">
+          <span class="plate">L-04.1 · EVAR</span>
+          <h4>Estudio EVAR — proyecto de inversión pública</h4>
+          <p>Espacio reservado para tu primer caso de estudio real (ubicación, alcance y resultado).</p>
+        </div>
+      </div>
+      <div class="pf-card">
+        <div class="pf-thumb">
+          <svg viewBox="0 0 300 225" xmlns="http://www.w3.org/2000/svg">
+            <rect width="300" height="225" fill="#1F5C73"/>
+            <path d="M0,60 L300,60 M0,100 L300,100 M0,140 L300,140" stroke="#F0EDE2" stroke-width="1" opacity="0.4"/>
+            <path d="M60,0 L60,225 M150,0 L150,225 M240,0 L240,225" stroke="#F0EDE2" stroke-width="1" opacity="0.4"/>
+          </svg>
+        </div>
+        <div class="pf-body">
+          <span class="plate">L-04.2 · HIDROLOGÍA</span>
+          <h4>Modelamiento hidráulico — HEC-RAS</h4>
+          <p>Espacio reservado para un caso de modelamiento de cauce o quebrada.</p>
+        </div>
+      </div>
+      <div class="pf-card">
+        <div class="pf-thumb">
+          <svg viewBox="0 0 300 225" xmlns="http://www.w3.org/2000/svg">
+            <rect width="300" height="225" fill="#B78628"/>
+            <circle cx="150" cy="112" r="70" fill="none" stroke="#1B2430" stroke-width="1" opacity="0.5"/>
+            <circle cx="150" cy="112" r="45" fill="none" stroke="#1B2430" stroke-width="1" opacity="0.5"/>
+            <circle cx="150" cy="112" r="20" fill="none" stroke="#1B2430" stroke-width="1" opacity="0.5"/>
+          </svg>
+        </div>
+        <div class="pf-body">
+          <span class="plate">L-04.3 · FOTOGRAMETRÍA</span>
+          <h4>Ortomosaico y nube de puntos — Agisoft</h4>
+          <p>Espacio reservado para un vuelo de dron y su procesamiento.</p>
+        </div>
+      </div>
+    </div>
+    <div class="pf-note reveal">// Estas tarjetas son plantillas. En la Fase 6 las reemplazamos con tus proyectos reales: foto, ubicación, alcance y tu rol en cada uno.</div>
+  </div>
+</section>
+
+<!-- ================= HERRAMIENTAS ================= -->
+<section id="herramientas">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="kicker">Lámina 05 · Software</span>
+        <h2>Herramientas de trabajo</h2>
+      </div>
+    </div>
+    <div class="tools-grid reveal">
+      <div class="tool-card"><div class="ic">GIS</div><h5>ArcGIS 10.8</h5><p>Análisis espacial</p></div>
+      <div class="tool-card"><div class="ic">CAD</div><h5>Civil 3D 2026</h5><p>Diseño y planos</p></div>
+      <div class="tool-card"><div class="ic">HID</div><h5>HEC-RAS 6.6</h5><p>Modelamiento hidráulico</p></div>
+      <div class="tool-card"><div class="ic">HID</div><h5>HidroEsta 2</h5><p>Hidrología estadística</p></div>
+      <div class="tool-card"><div class="ic">FOT</div><h5>Agisoft Metashape</h5><p>Fotogrametría</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACTO ================= -->
+<section id="contacto">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="kicker">Lámina 06 · Contacto</span>
+        <h2>Conversemos sobre tu proyecto</h2>
+      </div>
+    </div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="contact-list">
+          <div class="row"><span>Correo</span><span>contacto@jesuscondor.pe</span></div>
+          <div class="row"><span>Whatsapp</span><span>+51 9XX XXX XXX</span></div>
+          <div class="row"><span>Ubicación</span><span>Huancayo, Junín, Perú</span></div>
+          <div class="row"><span>Disponibilidad</span><span>Proyectos a nivel nacional</span></div>
+        </div>
+        <div class="social-row">
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="Facebook">fb</a>
+          <a href="#" aria-label="Instagram">ig</a>
+          <a href="#" aria-label="WhatsApp">wa</a>
+        </div>
+      </div>
+      <form class="reveal" id="contactForm">
+        <div>
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+        <div>
+          <label for="email">Correo</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+          <label for="mensaje">Cuéntame sobre tu proyecto</label>
+          <textarea id="mensaje" name="mensaje" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Enviar mensaje</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <p>© 2026 Jesús Condor Mango · Especialista EVAR</p>
+    <p class="mono">HUANCAYO — PERÚ</p>
+  </div>
+</footer>
+
+<script>
+  // Menú móvil
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  menuBtn.addEventListener('click', () => mobileNav.classList.toggle('open'));
+  mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileNav.classList.remove('open')));
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+
+  // Formulario (placeholder: sin backend aún)
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    alert('Formulario de contacto: aún no está conectado a un servicio de envío real. Este es un placeholder de la Fase 3.');
+  });
+</script>
+
+</body>
+</html>
