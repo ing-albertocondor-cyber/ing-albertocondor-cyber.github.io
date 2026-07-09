@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jesús Alberto Condor Mango | Especialista EVAR · Hidrología · Fotogrametría</title>
-<meta name="description" content="Jesús Alberto Condor Mango, Especialista EVAR acreditado por CENEPRED. Estudios de riesgos, hidrología y fotogrametría para proyectos de inversión pública en Perú.">
+<title>Jesús Condor Mango | Especialista EVAR · Hidrología · Fotogrametría</title>
+<meta name="description" content="Jesús Condor Mango, Especialista EVAR acreditado por CENEPRED. Estudios de riesgos, hidrología y fotogrametría para proyectos de inversión pública en Perú.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
     --paper-2:#E7E2D2;
     --ink:#1B2430;
     --ink-soft:#3E4A57;
-    --amber:#8b2e74;
+    --amber:#B78628;
     --survey-blue:#1F5C73;
     --risk-red:#A63D2F;
     --grid:#D8D3C0;
@@ -170,14 +170,22 @@
   .soon{position:absolute;top:36px;right:36px;background:var(--risk-red);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:10px;padding:3px 8px;letter-spacing:.06em;}
 
   /* ---------- Portafolio ---------- */
-  .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-  .pf-card{border:1px solid var(--grid);background:var(--white);}
-  .pf-thumb{aspect-ratio:4/3;background:var(--ink);position:relative;overflow:hidden;}
-  .pf-thumb svg{width:100%;height:100%;}
-  .pf-body{padding:18px;}
-  .pf-body .plate{margin-bottom:10px;}
-  .pf-body h4{font-family:'Fraunces',serif;font-size:17px;margin-bottom:6px;}
-  .pf-body p{color:var(--ink-soft);font-size:13.5px;}
+  .portfolio-grid{display:flex;flex-direction:column;gap:1px;background:var(--grid);border:1px solid var(--grid);}
+  .pf-card{background:var(--paper);padding:36px;display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:28px;align-items:start;}
+  .pf-images{display:grid;grid-template-columns:1fr 1fr;gap:10px;grid-column:span 2;}
+  .pf-images figure{margin:0;border:1px solid var(--grid);background:var(--white);}
+  .pf-images img{width:100%;height:220px;object-fit:cover;object-position:top;display:block;}
+  .pf-images figcaption{
+    font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--ink-soft);
+    padding:6px 8px;border-top:1px solid var(--grid);text-transform:uppercase;letter-spacing:.04em;
+  }
+  .pf-body .plate{margin-bottom:12px;}
+  .pf-body h4{font-family:'Fraunces',serif;font-size:20px;margin-bottom:10px;line-height:1.25;}
+  .pf-body p{color:var(--ink-soft);font-size:14px;margin-bottom:14px;}
+  .pf-meta{display:flex;flex-direction:column;gap:5px;margin-bottom:14px;}
+  .pf-meta .row{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:11.5px;border-bottom:1px dotted var(--grid);padding-bottom:4px;}
+  .pf-meta .row span:first-child{color:var(--ink-soft);text-transform:uppercase;letter-spacing:.04em;}
+  .pf-meta .row span:last-child{text-align:right;max-width:60%;}
   .pf-note{
     margin-top:40px;border:1px dashed var(--grid);padding:20px 24px;
     font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--ink-soft);
@@ -223,12 +231,14 @@
     .menu-btn{display:block;}
     .about-grid, .contact-grid{grid-template-columns:1fr;gap:40px;}
     .services{grid-template-columns:1fr;}
-    .portfolio-grid{grid-template-columns:1fr 1fr;}
+    .pf-card{grid-template-columns:1fr;padding:24px;}
+    .pf-images{grid-column:1;}
     .tools-grid{grid-template-columns:repeat(2,1fr);}
     .hero-strip div{min-width:50%;}
   }
   @media (max-width:520px){
-    .portfolio-grid{grid-template-columns:1fr;}
+    .pf-images{grid-template-columns:1fr;}
+    .pf-images img{height:180px;}
     .tools-grid{grid-template-columns:1fr 1fr;}
     section{padding:70px 0;}
   }
@@ -246,7 +256,7 @@
 
 <header>
   <div class="nav-inner">
-    <a href="#inicio" class="brand">JESÚS ALBERTO CONDOR MANGO<span>ESPECIALISTA EVAR · CENEPRED</span></a>
+    <a href="#inicio" class="brand">JESÚS CONDOR MANGO<span>ESPECIALISTA EVAR · CENEPRED</span></a>
     <nav class="links">
       <a href="#inicio"><b>L-01</b> Inicio</a>
       <a href="#sobre-mi"><b>L-02</b> Perfil</a>
@@ -279,7 +289,7 @@
   </svg>
   <div class="wrap hero-content">
     <span class="eyebrow plate">DOC <b>EVAR-CIV-01</b> · REV. 2026 · CENEPRED ACREDITADO</span>
-    <h1>Jesús Alberto Condor Mango</h1>
+    <h1>Jesús Condor Mango</h1>
     <p class="role">Especialista en Evaluación de Riesgos por Fenómenos Naturales (EVAR)</p>
     <p class="lead">Ingeniero Forestal y Ambiental (UNCP) con Maestría en Gestión Ambiental y Desarrollo Sostenible. Más de 5 años elaborando estudios EVAR para proyectos de inversión pública, respaldados con hidrología aplicada y levantamientos por fotogrametría de alta precisión.</p>
     <div class="hero-actions">
@@ -400,52 +410,86 @@
       <span class="plate">ESTADO <b>EN CARGA</b></span>
     </div>
     <div class="portfolio-grid reveal">
+
       <div class="pf-card">
-        <div class="pf-thumb">
-          <svg viewBox="0 0 300 225" xmlns="http://www.w3.org/2000/svg">
-            <rect width="300" height="225" fill="#1B2430"/>
-            <path d="M-10,180 C60,150 120,190 180,160 C240,130 270,170 320,150" stroke="#B78628" stroke-width="1.5" fill="none"/>
-            <path d="M-10,140 C70,110 130,150 190,120 C250,90 280,130 320,110" stroke="#1F5C73" stroke-width="1.5" fill="none"/>
-            <path d="M-10,100 C80,70 140,110 200,80 C260,50 285,90 320,70" stroke="#B78628" stroke-width="1.5" opacity="0.7" fill="none"/>
-          </svg>
+        <div class="pf-images">
+          <figure>
+            <img src="images/evar1-mapa.jpg" alt="Mapa de riesgos - Corte Superior de Justicia Selva Central" loading="lazy">
+            <figcaption>Mapa de riesgos · Esc. 1:2,500</figcaption>
+          </figure>
+          <figure>
+            <img src="images/evar1-foto.jpg" alt="Vista aérea del área del proyecto" loading="lazy">
+            <figcaption>Vuelo fotogramétrico</figcaption>
+          </figure>
         </div>
         <div class="pf-body">
           <span class="plate">L-04.1 · EVAR</span>
-          <h4>Estudio EVAR — proyecto de inversión pública</h4>
-          <p>Espacio reservado para tu primer caso de estudio real (ubicación, alcance y resultado).</p>
+          <h4>Evaluación de Riesgos por Inundación Pluvial — Corte Superior de Justicia de la Selva Central</h4>
+          <p>Estudio EVAR para el proyecto de mejoramiento de los órganos jurisdiccionales y administrativos de la Corte Superior de Justicia de Selva Central, incluyendo levantamiento con vuelo fotogramétrico del área de intervención.</p>
+          <div class="pf-meta">
+            <div class="row"><span>Cliente</span><span>Corte Superior de Justicia de la Selva Central</span></div>
+            <div class="row"><span>Ubicación</span><span>La Merced, Chanchamayo, Junín</span></div>
+            <div class="row"><span>Mi rol</span><span>Evaluador de Riesgos · Especialista SIG</span></div>
+          </div>
+          <div class="tag-row">
+            <span class="tag">EVAR</span><span class="tag">Fotogrametría</span><span class="tag">ArcGIS</span>
+          </div>
         </div>
       </div>
+
       <div class="pf-card">
-        <div class="pf-thumb">
-          <svg viewBox="0 0 300 225" xmlns="http://www.w3.org/2000/svg">
-            <rect width="300" height="225" fill="#1F5C73"/>
-            <path d="M0,60 L300,60 M0,100 L300,100 M0,140 L300,140" stroke="#F0EDE2" stroke-width="1" opacity="0.4"/>
-            <path d="M60,0 L60,225 M150,0 L150,225 M240,0 L240,225" stroke="#F0EDE2" stroke-width="1" opacity="0.4"/>
-          </svg>
+        <div class="pf-images">
+          <figure>
+            <img src="images/evar2-mapa.jpg" alt="Mapa de inundación - I.E. 262 Moyobamba Baja" loading="lazy">
+            <figcaption>Mapa de inundación T=10 años</figcaption>
+          </figure>
+          <figure>
+            <img src="images/evar2-foto.jpg" alt="Vista interior de la institución educativa" loading="lazy">
+            <figcaption>Panel fotográfico</figcaption>
+          </figure>
         </div>
         <div class="pf-body">
-          <span class="plate">L-04.2 · HIDROLOGÍA</span>
-          <h4>Modelamiento hidráulico — HEC-RAS</h4>
-          <p>Espacio reservado para un caso de modelamiento de cauce o quebrada.</p>
+          <span class="plate">L-04.2 · EVAR + HIDROLOGÍA</span>
+          <h4>EVAR + Estudio Hidrológico — I.E. 262 Moyobamba Baja</h4>
+          <p>Evaluación de riesgo por inundación pluvial para el mejoramiento del servicio de educación inicial, sustentada con estudio hidrológico y mapas de inundación para 6 periodos de retorno (2 a 100 años).</p>
+          <div class="pf-meta">
+            <div class="row"><span>Cliente</span><span>Municipalidad Distrital de Santa María de Chicmo</span></div>
+            <div class="row"><span>Ubicación</span><span>Andahuaylas, Apurímac</span></div>
+            <div class="row"><span>Mi rol</span><span>Evaluador de Riesgos · Especialista SIG</span></div>
+          </div>
+          <div class="tag-row">
+            <span class="tag">EVAR</span><span class="tag">Hidrología</span><span class="tag">Periodos de retorno</span>
+          </div>
         </div>
       </div>
+
       <div class="pf-card">
-        <div class="pf-thumb">
-          <svg viewBox="0 0 300 225" xmlns="http://www.w3.org/2000/svg">
-            <rect width="300" height="225" fill="#B78628"/>
-            <circle cx="150" cy="112" r="70" fill="none" stroke="#1B2430" stroke-width="1" opacity="0.5"/>
-            <circle cx="150" cy="112" r="45" fill="none" stroke="#1B2430" stroke-width="1" opacity="0.5"/>
-            <circle cx="150" cy="112" r="20" fill="none" stroke="#1B2430" stroke-width="1" opacity="0.5"/>
-          </svg>
+        <div class="pf-images">
+          <figure>
+            <img src="images/evar3-mapa.jpg" alt="Mapa de inundación Quebrada Caracol - I.E. Campirushari" loading="lazy">
+            <figcaption>Mapa de inundaciones · Qda. Caracol</figcaption>
+          </figure>
+          <figure>
+            <img src="images/evar3-foto.jpg" alt="Vista panorámica de la institución educativa" loading="lazy">
+            <figcaption>Panel fotográfico</figcaption>
+          </figure>
         </div>
         <div class="pf-body">
-          <span class="plate">L-04.3 · FOTOGRAMETRÍA</span>
-          <h4>Ortomosaico y nube de puntos — Agisoft</h4>
-          <p>Espacio reservado para un vuelo de dron y su procesamiento.</p>
+          <span class="plate">L-04.3 · EVAR + HIDROLOGÍA</span>
+          <h4>EVAR + Estudio Hidrológico — I.E. Campirushari</h4>
+          <p>Evaluación de riesgo por inundación pluvial para el mejoramiento del servicio de educación secundaria, con estudio hidrológico de máximas avenidas de la quebrada Caracol para distintos periodos de retorno.</p>
+          <div class="pf-meta">
+            <div class="row"><span>Cliente</span><span>Gobierno Regional de Junín</span></div>
+            <div class="row"><span>Ubicación</span><span>Pangoa, Satipo, Junín</span></div>
+            <div class="row"><span>Mi rol</span><span>Evaluador de Riesgos · Especialista SIG</span></div>
+          </div>
+          <div class="tag-row">
+            <span class="tag">EVAR</span><span class="tag">Hidrología</span><span class="tag">Faja marginal</span>
+          </div>
         </div>
       </div>
+
     </div>
-    <div class="pf-note reveal">// Estas tarjetas son plantillas. En la Fase 6 las reemplazamos con tus proyectos reales: foto, ubicación, alcance y tu rol en cada uno.</div>
   </div>
 </section>
 
@@ -480,8 +524,8 @@
     <div class="contact-grid">
       <div class="reveal">
         <div class="contact-list">
-          <div class="row"><span>Correo</span><span>ing.jesuscondor@gmail.com</span></div>
-          <div class="row"><span>Whatsapp</span><span>+51 962 889 752</span></div>
+          <div class="row"><span>Correo</span><span>contacto@jesuscondor.pe</span></div>
+          <div class="row"><span>Whatsapp</span><span>+51 9XX XXX XXX</span></div>
           <div class="row"><span>Ubicación</span><span>Huancayo, Junín, Perú</span></div>
           <div class="row"><span>Disponibilidad</span><span>Proyectos a nivel nacional</span></div>
         </div>
@@ -513,7 +557,7 @@
 
 <footer>
   <div class="wrap footer-inner">
-    <p>© 2026 Jesús Alberto Condor Mango · Especialista EVAR</p>
+    <p>© 2026 Jesús Condor Mango · Especialista EVAR</p>
     <p class="mono">HUANCAYO — PERÚ</p>
   </div>
 </footer>
